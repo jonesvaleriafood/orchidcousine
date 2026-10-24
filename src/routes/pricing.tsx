@@ -12,8 +12,8 @@ export const Route = createFileRoute("/pricing")({
     { property: "og:description", content: "A simple guide to Orchid's food and drink prices in Ibadan, with links to each menu item." },
     { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" },
     { property: "og:image", content: media.socialPreviewImage }, { name: "twitter:image", content: media.socialPreviewImage },
-    { property: "og:url", content: "/pricing" },
-  ], links: [{ rel: "canonical", href: "/pricing" }]  }), component: Pricing,
+    { property: "og:url", content: "https://orchidcousine.pages.dev/pricing" },
+  ], links: [{ rel: "canonical", href: "https://orchidcousine.pages.dev/pricing" }]  }), component: Pricing,
 });
 function Pricing() {
   const categories = menu.filter(c => c.dishes.some(d => d.amount !== null));

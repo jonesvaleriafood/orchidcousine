@@ -12,8 +12,8 @@ export const Route = createFileRoute("/services")({
     { property: "og:description", content: "Personal menus for engagements, weddings, intimate dinners and your family table." },
     { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" },
     { property: "og:image", content: media.socialPreviewImage }, { name: "twitter:image", content: media.socialPreviewImage },
-    { property: "og:url", content: "/services" },
-  ], links: [{ rel: "canonical", href: "/services" }]  }), component: Services,
+    { property: "og:url", content: "https://orchidcousine.pages.dev/services" },
+  ], links: [{ rel: "canonical", href: "https://orchidcousine.pages.dev/services" }]  }), component: Services,
 });
 function Services() {
   return <Page>

@@ -26,7 +26,7 @@ export const media = {
   flyer: p1.url,
   logo: p8.url,
   socialPreview: socialPreview.url,
-  socialPreviewImage: `https://id-preview--6ee0f5a8-1323-4cfc-8c45-4723f85f2bd5.lovable.app${socialPreview.url}`,
+  socialPreviewImage: `https://orchidcousine.pages.dev${socialPreview.url}`,
   chefVideo: productMedia.chefVideo,
   chefPoster: productMedia.chefPoster,
   chefLounge: productMedia.chefLounge,

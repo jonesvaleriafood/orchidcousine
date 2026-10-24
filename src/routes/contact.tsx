@@ -15,9 +15,9 @@ export const Route = createFileRoute("/contact")({
       { name: "twitter:card", content: "summary_large_image" },
       { property: "og:image", content: media.socialPreviewImage },
       { name: "twitter:image", content: media.socialPreviewImage },
-      { property: "og:url", content: "/contact" },
+      { property: "og:url", content: "https://orchidcousine.pages.dev/contact" },
     ],
-    links: [{ rel: "canonical", href: "/contact" }],
+    links: [{ rel: "canonical", href: "https://orchidcousine.pages.dev/contact" }],
   }),
   component: Contact,
 });

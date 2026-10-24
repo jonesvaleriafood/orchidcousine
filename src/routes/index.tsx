@@ -16,8 +16,8 @@ export const Route = createFileRoute("/")({
     { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" },
     { property: "og:image", content: media.socialPreviewImage }, { name: "twitter:image", content: media.socialPreviewImage },
     { name: "keywords", content: "Orchid Cuisines, private chef Ibadan, catering Ibadan, wedding catering Ibadan, food Oluyole, 5:30 Bar & Lounge, jollof, pasta, small chops, food by the litre" },
-    { property: "og:url", content: "/" },
-  ], links: [{ rel: "canonical", href: "/" }],
+    { property: "og:url", content: "https://orchidcousine.pages.dev/" },
+  ], links: [{ rel: "canonical", href: "https://orchidcousine.pages.dev/" }],
   scripts: [{ type: "application/ld+json", children: JSON.stringify({
     "@context": "https://schema.org", "@type": "Restaurant", name: "Orchid Cuisines",
     description: "Chef-led private chef and catering kitchen in Ibadan.", servesCuisine: ["Nigerian", "Intercontinental"],

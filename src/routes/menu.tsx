@@ -18,8 +18,8 @@ export const Route = createFileRoute("/menu")({
     { property: "og:description", content: "Signature plates, soups by the litre and chef-led celebration packages." },
     { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" },
     { property: "og:image", content: media.socialPreviewImage }, { name: "twitter:image", content: media.socialPreviewImage },
-    { property: "og:url", content: "/menu" },
-  ], links: [{ rel: "canonical", href: "/menu" }]  }), component: MenuPage,
+    { property: "og:url", content: "https://orchidcousine.pages.dev/menu" },
+  ], links: [{ rel: "canonical", href: "https://orchidcousine.pages.dev/menu" }]  }), component: MenuPage,
 });
 const views = ["Signature plates", "Soups & litre pots", "Celebration packages"] as const;
 function MenuPage() {
