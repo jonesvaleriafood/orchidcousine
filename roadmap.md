@@ -1,0 +1,31 @@
+# Website refresh
+- [x] Replace the social sharing image with clearer text, the supplied chef portrait and real rice imagery.
+- [x] Add a premium social sharing preview image and refresh the full website ZIP.
+- [x] Remove image-reference and AI labels across Menu and Prices and set the supplied logo as the favicon.
+- [x] Replace 18 unclear menu previews with distinct 1024×1280 dish illustrations, preserve original media and disclose AI images; verified Menu, Prices, mobile layout and 11 passing tests.
+- [x] Give Private Chef a distinct chef-first presentation; verified the portrait, chef video playback, all three WhatsApp service enquiries, mobile layout and 10 passing tests.
+- [x] Populate every menu card with supplied photos or video posters, using varied rice imagery and disclosing reference photos; verified all 37 cards load and menu tests pass.
+- [x] Keep Home meal headlines at base prices, require protein selection for penne and Chinese fried rice, and verify ₦8,000 chicken orders.
+- [x] Fill empty price-list previews with varied, creative crops of original food photos and clearly labelled references.
+- [x] Require protein with meal orders and verify the WhatsApp summary.
+- [x] Make signature-card buttons consistent and align their placement.
+- [x] Refine the price page with richer food imagery and clear meal pricing; verify desktop and mobile.
+- [x] Refresh the opening with automatic real-photo slides and touch-friendly controls.
+- [x] Replace provisional menu names and prices using the supplied price list, keeping meal and chicken pricing distinct.
+- [x] Add a browsing-only circular-preview price page linked to matching menu items and verify checkout prices.
+- [x] Strengthen the chef-led Orchid Cuisines / Ibadan identity and homepage.
+- [x] Add celebration packages and selectable litre pots to Menu and Private Chef pages.
+- [x] Verify navigation, enquiries, video controls and mobile layout.
+- [x] Replace invented offering imagery with supplied meals and photo-based large-container edits.
+- [x] Use the newly uploaded litre-container reference for rice and pasta presentations.
+- [x] Blend both homepage opening styles and refine Menu and Private Chef presentation.
+- [x] Verify updated imagery, pages and enquiries.
+- [x] Restore the Ibadan flyer on Contact, add a location map and directions, and make location wording consistent sitewide.
+- [x] Fill the rice preview and add dish-specific Ofada and Egusi container previews.
+- [x] Create an orange Ibadan-shaped location map.
+- [x] Update walk-in hours and strengthen the header and homepage opening.
+- [x] Verify selections, enquiries, navigation and layout (live Google Maps requires validation on an authorized hosted origin).
+- [x] Add the newly supplied photos and videos to menu products and suitable family-pot options, then verify media and enquiries.
+- [x] Populate the Ibadan map and add the supplied logo to the footer.
+- [x] Add an accurate cart, order review and WhatsApp checkout with bank-transfer details.
+- [x] Verify mixed orders, quantities, litre sizes, checkout details and layout.
