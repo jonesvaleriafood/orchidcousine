@@ -1,0 +1,242 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Design system definition.
+ *
+ * The @theme inline block maps CSS custom properties to Tailwind utility
+ * classes (e.g. --color-primary -> bg-primary, text-primary).
+ *
+ * The :root and .dark blocks define the actual color values using oklch.
+ * All colors MUST use oklch format.
+ *
+ * To add a new semantic color:
+ * 1. Add the variable to :root (light value) and .dark (dark value)
+ * 2. Register it in @theme inline as --color-<name>: var(--<name>)
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-paper-muted: var(--paper-muted);
+  --color-map-land: var(--map-land);
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.129 0.042 264.695);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.129 0.042 264.695);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.129 0.042 264.695);
+  --primary: oklch(0.208 0.042 265.755);
+  --primary-foreground: oklch(0.984 0.003 247.858);
+  --secondary: oklch(0.968 0.007 247.896);
+  --secondary-foreground: oklch(0.208 0.042 265.755);
+  --muted: oklch(0.968 0.007 247.896);
+  --muted-foreground: oklch(0.554 0.046 257.417);
+  --accent: oklch(0.968 0.007 247.896);
+  --accent-foreground: oklch(0.208 0.042 265.755);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.984 0.003 247.858);
+  --border: oklch(0.929 0.013 255.508);
+  --input: oklch(0.929 0.013 255.508);
+  --ring: oklch(0.704 0.04 256.788);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.984 0.003 247.858);
+  --sidebar-foreground: oklch(0.129 0.042 264.695);
+  --sidebar-primary: oklch(0.208 0.042 265.755);
+  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-accent: oklch(0.968 0.007 247.896);
+  --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
+  --sidebar-border: oklch(0.929 0.013 255.508);
+  --sidebar-ring: oklch(0.704 0.04 256.788);
+}
+
+.dark {
+  --background: oklch(0.129 0.042 264.695);
+  --foreground: oklch(0.984 0.003 247.858);
+  --card: oklch(0.208 0.042 265.755);
+  --card-foreground: oklch(0.984 0.003 247.858);
+  --popover: oklch(0.208 0.042 265.755);
+  --popover-foreground: oklch(0.984 0.003 247.858);
+  --primary: oklch(0.929 0.013 255.508);
+  --primary-foreground: oklch(0.208 0.042 265.755);
+  --secondary: oklch(0.279 0.041 260.031);
+  --secondary-foreground: oklch(0.984 0.003 247.858);
+  --muted: oklch(0.279 0.041 260.031);
+  --muted-foreground: oklch(0.704 0.04 256.788);
+  --accent: oklch(0.279 0.041 260.031);
+  --accent-foreground: oklch(0.984 0.003 247.858);
+  --destructive: oklch(0.704 0.191 22.216);
+  --destructive-foreground: oklch(0.984 0.003 247.858);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.551 0.027 264.364);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.208 0.042 265.755);
+  --sidebar-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-accent: oklch(0.279 0.041 260.031);
+  --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.551 0.027 264.364);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+  }
+}
+
+/* Orchid Cuisines brand: ash/charcoal with orange */
+:root {
+  --background: oklch(0.19 0.004 60);
+  --paper: oklch(0.92 0 0);
+  --ink: oklch(0.22 0 0);
+  --paper-muted: oklch(0.45 0 0);
+  --map-land: oklch(0.28 0.025 55);
+  --map-water: oklch(0.38 0.03 190);
+  --hero-scrim: linear-gradient(90deg, oklch(0.14 0 0 / 95%) 0%, oklch(0.14 0 0 / 82%) 35%, oklch(0.14 0 0 / 22%) 75%);
+  --foreground: oklch(0.95 0.008 70);
+  --card: oklch(0.24 0.005 60);
+  --card-foreground: oklch(0.95 0.008 70);
+  --popover: oklch(0.24 0.005 60);
+  --popover-foreground: oklch(0.95 0.008 70);
+  --primary: oklch(0.68 0.19 45);
+  --primary-foreground: oklch(0.16 0.01 50);
+  --secondary: oklch(0.32 0.006 60);
+  --secondary-foreground: oklch(0.95 0.008 70);
+  --muted: oklch(0.28 0.005 60);
+  --muted-foreground: oklch(0.7 0.01 70);
+  --accent: oklch(0.68 0.19 45);
+  --accent-foreground: oklch(0.16 0.01 50);
+  --border: oklch(0.34 0.006 60);
+  --input: oklch(0.34 0.006 60);
+  --ring: oklch(0.68 0.19 45);
+}
+@theme inline {
+  --font-display: "Cormorant Garamond", serif;
+  --font-sans: "Manrope", sans-serif;
+}
+body { font-family: var(--font-sans); }
+.font-display { font-family: var(--font-display); }
+* { letter-spacing: 0 !important; }
+.brand-hero::after { content: ""; position: absolute; inset: 0; background: var(--hero-scrim); }
+.site-header { border-top: 3px solid var(--primary); }
+.signature-hero { border-bottom: 5px solid var(--primary); }
+.hero-food { animation: food-reveal 900ms ease-out both; }
+.opening-photo { opacity: 0; transition: opacity 900ms ease; object-position: 70% center; }
+.opening-photo.is-active { opacity: 1; }
+.opening-inner { min-height: min(830px, calc(100svh - 140px)); }
+.opening-title { font-size: 116px; line-height: 0.85; }
+.opening-copy { max-width: 650px; }
+.opening-dish-label { max-width: 340px; }
+.private-chef-opening { background: var(--background); }
+.private-chef-opening::after { content: ""; position: absolute; inset: 0; background: var(--private-chef-scrim); }
+:root { --private-chef-scrim: linear-gradient(90deg, var(--background) 25%, oklch(0.19 0.004 60 / 85%) 43%, oklch(0.19 0.004 60 / 8%) 75%); }
+.private-chef-intro { min-height: min(720px, calc(100svh - 145px)); }
+.private-chef-copy { max-width: 630px; }
+.private-chef-copy h1 { font-size: 88px; line-height: 0.95; }
+.private-chef-portrait { object-position: center 35%; }
+@media (max-width: 767px) {
+  :root { --private-chef-scrim: linear-gradient(0deg, var(--background) 4%, oklch(0.19 0.004 60 / 94%) 24%, oklch(0.19 0.004 60 / 15%) 67%, oklch(0.19 0.004 60 / 35%) 100%); }
+  .private-chef-intro { min-height: 760px; padding-top: 25px; padding-bottom: 28px; gap: 24px; }
+  .private-chef-copy { margin-top: 245px; }
+  .private-chef-copy h1 { font-size: 56px; }
+  .private-chef-portrait { height: 520px; object-position: center 30%; }
+}
+@media (max-width: 640px) {
+  .opening-inner { min-height: min(740px, calc(100svh - 125px)); padding-block: 24px; }
+  .opening-title { font-size: 76px; }
+  .opening-copy { padding-block: 25px; }
+  .opening-photo { object-position: 62% center; }
+  .opening-bottom { gap: 16px; }
+}
+@media (max-width: 360px) { .opening-title { font-size: 64px; } }
+.ibadan-atlas { position: relative; max-width: 940px; margin-inline: auto; }
+.ibadan-map-shell { position: relative; width: 100%; aspect-ratio: 1.2; }
+.ibadan-map-cutout { position: absolute; inset: 0; clip-path: url(#ibadan-outline); background: var(--map-land); }
+.ibadan-map-cutout > img { filter: grayscale(1) sepia(0.7) saturate(2); }
+.ibadan-location { position: absolute; left: 30%; top: 55%; display: flex; align-items: center; gap: 10px; padding: 12px 16px; background: var(--background); border-bottom: 3px solid var(--primary); max-width: 65%; }
+@media (max-width: 640px) {
+  .ibadan-location { left: 14%; top: 54%; max-width: 85%; padding: 8px; }
+  .ibadan-location .font-display { font-size: 20px; }
+  .signature-hero .editorial-entrance { padding-top: 28px; padding-bottom: 28px; }
+  .signature-hero .hero-title { font-size: 64px; }
+  .signature-hero .hero-title + p { font-size: 25px; }
+  .signature-hero .hero-title + p + p { margin-top: 12px; min-height: 0; font-size: 14px; }
+  .signature-hero .editorial-entrance > a { margin-top: 24px; font-size: 12px; }
+  .signature-hero .editorial-entrance > div.mt-7 { margin-top: 20px; gap: 12px; }
+  .signature-hero .editorial-entrance > div.mt-7 > span { flex-shrink: 0; }
+  .signature-hero .editorial-entrance > div.mt-7 > span:last-child { font-size: 16px; margin-left: 0; padding-left: 10px; flex-shrink: 1; }
+}
+.hero-title em { display: inline-block; transform: rotate(-4deg); transform-origin: left center; }
+.chef-seal { position: absolute; right: 48px; bottom: 85px; width: 158px; height: 158px; border-radius: 50%; border: 1px solid var(--primary); background: var(--primary); color: var(--primary-foreground); transform: rotate(12deg); align-items: center; justify-content: center; flex-direction: column; gap: 10px; text-align: center; font-family: var(--font-display); font-size: 21px; font-style: italic; line-height: 1.1; }
+@keyframes food-reveal { from { opacity: 0.6; transform: scale(1.06); } to { opacity: 1; transform: scale(1); } }
+.editorial-entrance { animation: enter 700ms ease-out both; }
+@keyframes enter { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 640px) {
+  :root { --hero-scrim: linear-gradient(0deg, oklch(0.14 0 0 / 98%), oklch(0.14 0 0 / 65%) 60%, oklch(0.14 0 0 / 30%)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}

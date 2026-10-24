@@ -1,0 +1,30 @@
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { ArrowUpRight, ChefHat } from "lucide-react";
+import { Page, Eyebrow, media } from "@/components/site";
+import { Button } from "@/components/ui/button";
+import { menu, allDishes, requiresProtein, pricingPreview } from "@/lib/menu";
+
+export const Route = createFileRoute("/pricing")({
+  head: () => ({ meta: [
+    { title: "Food & Drink Prices — Orchid Cuisines Ibadan" },
+    { name: "description", content: "Explore Orchid Cuisines food and drink prices in Ibadan. Rice with chicken is ₦8,000; base prices are a breakdown and all meal orders include protein." },
+    { property: "og:title", content: "The Price List — Orchid Cuisines" },
+    { property: "og:description", content: "A simple guide to Orchid's food and drink prices in Ibadan, with links to each menu item." },
+    { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" },
+    { property: "og:image", content: media.socialPreviewImage }, { name: "twitter:image", content: media.socialPreviewImage },
+    { property: "og:url", content: "/pricing" },
+  ], links: [{ rel: "canonical", href: "/pricing" }]  }), component: Pricing,
+});
+function Pricing() {
+  const categories = menu.filter(c => c.dishes.some(d => d.amount !== null));
+  const rice = allDishes.find(d => d.id === "chinese-fried-rice");
+  return <Page>
+    <section className="border-b border-border"><div className="mx-auto grid max-w-7xl gap-8 px-6 py-12 md:grid-cols-[1.1fr_0.9fr] md:items-center md:gap-16 md:py-16">
+      <div><Eyebrow>Orchid Cuisines · À la carte</Eyebrow><h1 className="font-display text-6xl leading-none md:text-7xl">The Orchid<br /><em className="text-primary">price list.</em></h1><p className="mt-6 max-w-md leading-relaxed text-muted-foreground">Your favourite flavours, down to the last detail.</p><div className="mt-7 flex items-center gap-3 border-t border-border pt-5 text-sm"><ChefHat className="size-5 shrink-0 text-primary" /><p>Every rice and pasta meal comes with protein.<br /><span className="text-muted-foreground">Choose your portion; add extra protein as you like.</span></p></div></div>
+      <div className="flex items-center gap-5 sm:gap-8">{rice?.img && <img src={rice.img} alt="Chinese fried rice with chicken" className="size-32 shrink-0 rounded-full border-4 border-border object-cover sm:size-44 lg:size-52" />}<div className="min-w-0 flex-1"><p className="text-xs uppercase text-muted-foreground">A complete plate</p><h2 className="mt-2 font-display text-3xl">Rice + chicken</h2><p className="mt-2 font-display text-5xl text-primary">₦8,000</p><div className="mt-4 space-y-2 border-t border-border pt-3 text-xs text-muted-foreground"><p className="flex justify-between gap-3"><span>Base rice</span><span>₦5,000</span></p><p className="flex justify-between gap-3"><span>Chicken portion</span><span>₦3,000</span></p></div></div></div>
+    </div></section>
+    <nav aria-label="Price categories" className="border-b border-border bg-card"><div className="mx-auto flex max-w-7xl gap-2 overflow-x-auto px-6 py-3">{categories.map((c, i) => <Button key={c.category} asChild variant="ghost" size="sm" className="shrink-0"><a href={`#prices-${i}`}>{c.category}</a></Button>)}</div></nav>
+    <div className="mx-auto grid max-w-7xl items-start gap-x-16 gap-y-14 px-6 py-14 md:grid-cols-2">{categories.map((c, i) => <section id={`prices-${i}`} key={c.category} className="scroll-mt-28"><div className="flex items-baseline gap-4 border-b border-primary/60 pb-4"><span className="text-xs text-primary">{String(i + 1).padStart(2, "0")}</span><h2 className="font-display text-4xl">{c.category}</h2></div><p className="mt-3 text-xs leading-relaxed text-muted-foreground">{c.category === "Rice Villa" ? "Base rice ₦5,000 · with chicken ₦8,000. Named meat and fish are included; Chinese and coconut rice require a protein portion." : c.category === "Pasta Arena" ? "Base prices below. Stir fry and penne pasta require a protein portion. Penne with chicken is ₦8,000; native pasta includes its named proteins." : c.category === "Protein" ? "Protein portions · choose with your meal or add an extra." : c.note}</p><div className="mt-2 divide-y divide-border">{c.dishes.filter(d => d.amount !== null).map(d => <article key={d.id} className="grid grid-cols-[64px_minmax(0,1fr)_auto] items-center gap-3 py-5 sm:gap-4"><div className="relative size-16 shrink-0"><img src={pricingPreview(d).src} alt={pricingPreview(d).alt} title={pricingPreview(d).alt} loading="lazy" width={1024} height={1280} className="h-full w-full rounded-full border border-border object-cover" /></div><div className="min-w-0"><h3 className="text-sm font-semibold leading-relaxed">{d.name}</h3><Button asChild variant="link" size="sm" className="h-8 px-0 text-xs"><Link to="/menu" search={{ item: d.id }}>View item <ArrowUpRight className="size-3" /></Link></Button></div><div className="text-right"><p className="whitespace-nowrap font-semibold text-primary">{d.price}</p>{requiresProtein(d) && <p className="mt-1 text-[10px] text-muted-foreground">+ protein</p>}</div></article>)}</div></section>)}</div>
+    <section className="border-t border-border bg-paper text-ink"><div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-5 px-6 py-10 sm:flex-row sm:items-center"><div><h2 className="font-display text-3xl">Something for a bigger occasion?</h2><p className="mt-2 max-w-xl text-sm leading-relaxed text-paper-muted">Litre pots, celebrations and kitchen specials are quoted separately. Listed prices are subject to chef confirmation.</p></div><Button asChild variant="default" className="h-11 shrink-0"><Link to="/menu">Explore the full menu <ArrowUpRight /></Link></Button></div></section>
+  </Page>;
+}
