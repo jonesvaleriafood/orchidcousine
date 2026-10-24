@@ -23,6 +23,10 @@ npm run dev
 
 ## Built with
 
+## Portable source export
+
+Run `node scripts/export-website.mjs /tmp/orchid-export/orchid-cuisines-website` while the preview media server is available. This stages a clean source copy outside the project, downloads all uploaded media into its `public/media` folder, and updates only that copy's asset URLs and production metadata. It excludes credentials, dependencies, and build output and fails on missing or incomplete media. Deploy the exported source rather than a ZIP containing only asset pointers.
+
 - TanStack Start
 - TypeScript
 - React

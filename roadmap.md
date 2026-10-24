@@ -1,4 +1,5 @@
 # Website refresh
+- [ ] Diagnose Cloudflare missing media and deliver a verified portable ZIP containing all uploaded images, logo and videos.
 - [x] Replace the social sharing image with clearer text, the supplied chef portrait and real rice imagery.
 - [x] Add a premium social sharing preview image and refresh the full website ZIP.
 - [x] Remove image-reference and AI labels across Menu and Prices and set the supplied logo as the favicon.

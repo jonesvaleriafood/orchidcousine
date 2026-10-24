@@ -26,3 +26,4 @@
 - Keep the cross-page shopping bag in the root cart provider and format WhatsApp summaries through shared pure order helpers; unknown prices stay quote-required, listed prices remain provisional, and bank transfers are never marked verified by the browser.
 - Show a sourced street-map image inside the Ibadan boundary while Google Maps is unavailable, preserving visible map attribution and exact-destination directions.
 - Keep the social sharing preview image in shared site media and reuse it in each page head so link previews stay consistent.
+- Package external-hosting exports with scripts/export-website.mjs, which vendors every asset pointer into the exported public/media folder and validates its size; preview-only asset URLs do not exist on external hosts.
